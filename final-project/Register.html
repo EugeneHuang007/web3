@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Pet Information Registration</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+      }
+
+      h1 {
+        text-align: center;
+        color: #333333;
+      }
+
+      form {
+        width: 60%;
+        margin: auto;
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+        color: #666666;
+      }
+
+      input[type="text"],
+      input[type="number"],
+      select,
+      textarea {
+        width: 100%;
+        padding: 10px;
+        border-radius: 3px;
+        border: 1px solid #cccccc;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+      }
+
+      input[type="radio"] {
+        margin-right: 5px;
+      }
+
+      button[type="button"] {
+        display: block;
+        margin-top: 20px;
+        background-color: #4CAF50;
+        color: #ffffff;
+        border: none;
+        border-radius: 3px;
+        padding: 10px;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold;
+      }
+
+      button[type="button"]:hover {
+        background-color: #3e8e41;
+      }
+
+      #formDiv {
+        margin-top: 30px;
+      }
+
+      #outputDiv {
+        background-color: #ffffff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+      }
+    </style>
+    <script>
+      function submitForm() {
+
+        var petName = document.getElementById("petName").value;
+        var petType = document.getElementById("petType").value;
+        var petAge = document.getElementById("petAge").value;
+        var petGender = document.getElementById("petGender").value;
+        var petDescription = document.getElementById("petDescription").value;
+
+        var outputDiv = document.createElement("div");
+        outputDiv.id = "outputDiv";
+        outputDiv.innerHTML = "<h2>Pet Information Registration</h2>" +
+                              "<p>Name：" + petName + "</p>" +
+                              "<p>Type：" + petType + "</p>" +
+                              "<p>Age：" + petAge + "</p>" +
+                              "<p>Sex：" + petGender + "</p>" +
+                              "<p>Remarks：" + petDescription + "</p>";
+
+
+        var formDiv = document.getElementById("formDiv");
+        formDiv.appendChild(outputDiv);
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Pet Information Registration</h1>
+    <div id="formDiv">
+      <form>
+        <label for="petName">Name：</label>
+        <input type="text" id="petName" name="petName" required><br>
+
+        <label for="petType">Type：</label>
+        <input type="text" id="petType" name="petType" required><br>
+
+        <label for="petID">ParentID：</label>
+        <input type="text" id="petID" name="petID" required>
+        <input type="text" id="petID" name="petID" required><br>
+
+        <label for="petAge">Age：</label>
+        <input type="number" id="petAge" name="petAge" required><br>
+
+        <label for="petGender">Sex：</label>
+        <input type="radio" id="petGenderMale" name="petGender" value="male" required>
+        <label for="petGenderMale">Male</label>
+        <input type="radio" id="petGenderFemale" name="petGender" value="female">
+        <label for="petGenderFemale">Female</label><br>
+
+        <label for="petDescription">Remarks：</label>
+        <textarea id="petDescription" name="petDescription" rows="4" cols="50"></textarea><br>
+
+        <button type="button" onclick="submitForm()">Generate ID</button>
+      </form>
+    </div>
+  </body>
+</html>
+
